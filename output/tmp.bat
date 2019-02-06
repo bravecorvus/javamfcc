@@ -1,0 +1,1 @@
+/usr/local/bin/x2x +sf /output/audio.wav | /usr/local/bin/frame -l 400 -p 80 | /usr/local/bin/window -l 400 -L 512 -w 1 -n 1 | /usr/local/bin/mcep -a 0.42 -m 24 -l 512 | /usr/local/bin/swab +f > /output/audio.wav.mfc
