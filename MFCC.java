@@ -19,7 +19,6 @@ public class MFCC {
   public static void main(String[] args) throws IOException, InterruptedException, Exception {
     System.out.println("MFCC Coefficient Extractor");
     // Executables
-    String sox = "/usr/bin/sox";
     String x2x = "/usr/local/bin/x2x";
 		String frame = "/usr/local/bin/frame";
 		String window = "/usr/local/bin/window";
@@ -28,7 +27,6 @@ public class MFCC {
 
     // Command Line Options
     String WavFile = "/output/audio.wav";
-    String RawFile = WavFile + ".raw";
     String frameLength = "400";
     String frameLengthOutput = "512";
     String framePeriod = "80";
@@ -38,9 +36,6 @@ public class MFCC {
     // Convert original WAV file to RAW
     // String soxcmd = sox + " " + WavFile + "  " + RawFile;
     // launchProc(soxcmd, "sox", WavFile);
-
-    String soxcmd = sox + " " + WavFile + " " + RawFile;
-    launchProc(soxcmd, "sox", WavFile);
 
     // MFCC
     String mfcccmd = x2x + " +sf " + WavFile + " | " + frame + " -l " + frameLength + " -p " + framePeriod + " | " + window
