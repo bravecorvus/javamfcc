@@ -9,5 +9,5 @@ Simplified program originally hosted at the [marrytts repo](https://github.com/m
 2. Replace [output/audio.wav](output/audio.wav) with a WAV audio file of the same name
 3. Run the following commands
 ```
-docker build -t javamfcc:latest . && docker run --name javamfcc --rm -it -v $PWD/output:/output javamfcc:latest /bin/sh
+docker build -t javamfcc:latest . && docker run --name javamfcc --rm -v $PWD/output:/output javamfcc:latest
 ```
